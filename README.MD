@@ -72,7 +72,7 @@ docker-compose up -d
 
 
 docker-compose exec web python manage.py migrate
-Отправить тестовый webhook:
+### Отправить тестовый webhook:
 
 
 curl -X POST http://localhost:8000/api/webhook/bank/ \
@@ -84,6 +84,7 @@ curl -X POST http://localhost:8000/api/webhook/bank/ \
     "document_number": "PAY-328",
     "document_date": "2024-04-27T21:00:00Z"
   }'
-Проверить баланс:
+
+### Проверить баланс:
 
 curl http://localhost:8000/api/organizations/1234567890/balance/
