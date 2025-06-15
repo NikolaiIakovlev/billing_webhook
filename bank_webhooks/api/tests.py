@@ -6,6 +6,7 @@ from .models import Organization, Payment
 import uuid
 
 class BankWebhookTests(TestCase):
+    """Тесты для обработки входящих платежей от банка."""
     def setUp(self):
         self.client = APIClient()
         self.webhook_url = reverse('bank-webhook')
@@ -63,6 +64,7 @@ class BankWebhookTests(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 class OrganizationBalanceTests(TestCase):
+    """Тесты для получения баланса организации."""
     def setUp(self):
         self.client = APIClient()
         self.org = Organization.objects.create(inn="1234567890", balance=1000)

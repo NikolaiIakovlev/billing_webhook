@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DJANGO_SETTINGS_MODULE=config.settings
+      - DJANGO_SETTINGS_MODULE=bank_webhooks.settings
     depends_on:
       - db
 
